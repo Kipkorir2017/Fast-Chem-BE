@@ -9,6 +9,28 @@ class Profile(models.Model):
         profile_pic = models.ImageField(upload_to = 'images/')
         location=models.CharField(max_length=200, blank=True)
         contact = models.CharField(max_length=30, blank=True)
+
+
+        def __str__(self):
+
+            return self.user.username
+
+        @receiver(post_save, sender=User)
+        def update_user_profile(sender, instance, created, **kwargs):
+
+            if created:
+
+                Profile.objects.create(user=instance)
+                instance.profile.save()
+
+        def save_profile(self):
+
+            self.save()
+
+        def delete_profile(self):
+            self.delete()
+
+        
     
 # class medicine(models.Model):
 #     name = models.CharField(max_length=50)
