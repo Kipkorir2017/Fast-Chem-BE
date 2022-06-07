@@ -44,4 +44,5 @@ class Pharmacy(models.Model):
     location=models.CharField(max_length=50)
     medicine_name=models.CharField(max_length=50)
     price=models.DecimalField(max_digits=10)
+    description=models.TextField(max_length=300)
     
