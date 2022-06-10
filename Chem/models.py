@@ -46,3 +46,14 @@ class Pharmacy(models.Model):
     price=models.DecimalField(max_digits=10)
     description=models.TextField(max_length=300)
     
+
+
+    def __str__(self):
+
+        return self.name
+    def save_profile(self):
+
+            self.save()
+
+    def delete_profile(self):
+            self.delete()

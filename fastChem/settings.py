@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'chem',
+    'Chem',
     'drf_yasg',
     'rest_framework',
     'django.contrib.admin',
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'fastChem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'chem',
+        'NAME': '',
         'USER': '',
         'PASSWORD':'',
         'HOST': '127.0.0.1',
